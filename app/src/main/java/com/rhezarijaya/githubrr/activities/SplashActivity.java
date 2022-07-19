@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.rhezarijaya.githubrr.R;
+import com.rhezarijaya.githubrr.utils.Constants;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -18,6 +19,6 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             startActivity(new Intent(SplashActivity.this, MainActivity.class));
             finish();
-        }, 3000);
+        }, Constants.SPLASH_SCREEN_DELAY);
     }
 }

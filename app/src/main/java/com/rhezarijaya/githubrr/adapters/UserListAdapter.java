@@ -4,11 +4,13 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.DiffUtil;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.rhezarijaya.githubrr.databinding.ListItemUserBinding;
 import com.rhezarijaya.githubrr.models.User;
+import com.rhezarijaya.githubrr.models.UserDiffCallback;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +25,12 @@ public class UserListAdapter extends RecyclerView.Adapter<UserListAdapter.ViewHo
     }
 
     public void setUserList(List<User> userList) {
-        this.userList = userList;
-        notifyDataSetChanged();
+        UserDiffCallback userDiffCallback = new UserDiffCallback(this.userList, userList);
+        DiffUtil.DiffResult diffResult = DiffUtil.calculateDiff(userDiffCallback);
+
+        this.userList.clear();
+        this.userList.addAll(userList);
+        diffResult.dispatchUpdatesTo(this);
     }
 
     @NonNull
