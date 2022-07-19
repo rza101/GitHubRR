@@ -1,0 +1,73 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.GitHubRR" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/teal_medium</item>
+        <item name="colorPrimaryVariant">@color/teal_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/orange</item>
+        <item name="colorSecondaryVariant">@color/yellow</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.GitHubRR.NoActionBar" parent="Theme.AppCompat.DayNight.NoActionBar"/>
+
+    <style name="TextDetailHeading">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="TextDetailHeading.Name" parent="TextDetailHeading">
+        <item name="android:maxLines">2</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="TextDetailHeading.Username" parent="TextDetailHeading">
+        <item name="android:maxLines">1</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:textStyle">italic</item>
+        <item name="android:layout_marginTop">5dp</item>
+    </style>
+
+    <style name="TextDetailInfo">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+    <style name="TextDetailInfo.Title" parent="TextDetailInfo">
+        <item name="android:textSize">17.5sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="layout_constraintHorizontal_weight">1</item>
+    </style>
+
+    <style name="TextDetailInfo.Value" parent="TextDetailInfo">
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="TextDetailPlaces">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:maxLines">5</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="IconDetailPlaces">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+    </style>
+</resources>

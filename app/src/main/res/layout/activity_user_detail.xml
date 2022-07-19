@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="never"
+    tools:context=".activities.UserDetailActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/root_padding">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/detail_civ_avatar"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            app:layout_constraintBottom_toTopOf="@id/detail_tv_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/user1" />
+
+        <TextView
+            android:id="@+id/detail_tv_name"
+            style="@style/TextDetailHeading.Name"
+            app:layout_constraintBottom_toTopOf="@id/detail_tv_username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_civ_avatar"
+            tools:text="Nama User" />
+
+        <TextView
+            android:id="@+id/detail_tv_username"
+            style="@style/TextDetailHeading.Username"
+            app:layout_constraintBottom_toTopOf="@id/detail_tv_repositories_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/detail_tv_name"
+            tools:text="\@username" />
+
+        <TextView
+            android:id="@+id/detail_tv_repositories_title"
+            style="@style/TextDetailInfo.Title"
+            android:layout_marginTop="10dp"
+            android:text="@string/repositories"
+            app:layout_constraintBottom_toTopOf="@id/detail_tv_repositories"
+            app:layout_constraintEnd_toStartOf="@id/detail_tv_followers_title"
+            app:layout_constraintStart_toStartOf="@id/detail_tv_username"
+            app:layout_constraintTop_toBottomOf="@id/detail_tv_username" />
+
+        <TextView
+            android:id="@+id/detail_tv_followers_title"
+            style="@style/TextDetailInfo.Title"
+            android:text="@string/followers"
+            app:layout_constraintBottom_toBottomOf="@id/detail_tv_repositories_title"
+            app:layout_constraintEnd_toStartOf="@id/detail_tv_followings_title"
+            app:layout_constraintStart_toEndOf="@id/detail_tv_repositories_title"
+            app:layout_constraintTop_toTopOf="@id/detail_tv_repositories_title" />
+
+        <TextView
+            android:id="@+id/detail_tv_followings_title"
+            style="@style/TextDetailInfo.Title"
+            android:text="@string/followings"
+            app:layout_constraintBottom_toBottomOf="@id/detail_tv_repositories_title"
+            app:layout_constraintEnd_toEndOf="@id/detail_tv_username"
+            app:layout_constraintStart_toEndOf="@id/detail_tv_followers_title"
+            app:layout_constraintTop_toTopOf="@id/detail_tv_repositories_title" />
+
+        <TextView
+            android:id="@+id/detail_tv_repositories"
+            style="@style/TextDetailInfo.Value"
+            android:layout_marginTop="5dp"
+            app:layout_constraintBottom_toTopOf="@id/detail_iv_location"
+            app:layout_constraintEnd_toEndOf="@id/detail_tv_repositories_title"
+            app:layout_constraintStart_toStartOf="@id/detail_tv_repositories_title"
+            app:layout_constraintTop_toBottomOf="@id/detail_tv_repositories_title"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/detail_tv_followers"
+            style="@style/TextDetailInfo.Value"
+            app:layout_constraintBottom_toBottomOf="@id/detail_tv_repositories"
+            app:layout_constraintEnd_toEndOf="@id/detail_tv_followers_title"
+            app:layout_constraintStart_toStartOf="@id/detail_tv_followers_title"
+            app:layout_constraintTop_toTopOf="@id/detail_tv_repositories"
+            tools:text="100" />
+
+        <TextView
+            android:id="@+id/detail_tv_followings"
+            style="@style/TextDetailInfo.Value"
+            app:layout_constraintBottom_toBottomOf="@id/detail_tv_repositories"
+            app:layout_constraintEnd_toEndOf="@id/detail_tv_followings_title"
+            app:layout_constraintStart_toStartOf="@id/detail_tv_followings_title"
+            app:layout_constraintTop_toTopOf="@id/detail_tv_repositories"
+            tools:text="100" />
+
+        <ImageView
+            android:id="@+id/detail_iv_location"
+            style="@style/IconDetailPlaces"
+            android:src="@drawable/ic_baseline_location_on_24"
+            app:layout_constraintBottom_toTopOf="@id/detail_barrier"
+            app:layout_constraintEnd_toStartOf="@id/detail_tv_location"
+            app:layout_constraintStart_toStartOf="@id/detail_tv_username"
+            app:layout_constraintTop_toBottomOf="@id/detail_tv_repositories"
+            app:tint="@color/orange" />
+
+        <TextView
+            android:id="@+id/detail_tv_location"
+            style="@style/TextDetailPlaces"
+            app:layout_constraintBottom_toTopOf="@id/detail_barrier"
+            app:layout_constraintEnd_toEndOf="@id/detail_tv_username"
+            app:layout_constraintStart_toEndOf="@id/detail_iv_location"
+            app:layout_constraintTop_toTopOf="@id/detail_iv_location"
+            tools:text="Location" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/detail_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="detail_iv_location, detail_tv_location" />
+
+        <ImageView
+            android:id="@+id/detail_iv_company"
+            style="@style/IconDetailPlaces"
+            android:src="@drawable/ic_baseline_corporate_fare_24"
+            app:layout_constraintEnd_toStartOf="@id/detail_tv_company"
+            app:layout_constraintStart_toStartOf="@id/detail_iv_location"
+            app:layout_constraintTop_toBottomOf="@id/detail_barrier"
+            app:tint="@color/orange" />
+
+        <TextView
+            android:id="@+id/detail_tv_company"
+            style="@style/TextDetailPlaces"
+            app:layout_constraintBottom_toBottomOf="@id/detail_barrier2"
+            app:layout_constraintEnd_toEndOf="@id/detail_tv_location"
+            app:layout_constraintStart_toEndOf="@id/detail_iv_company"
+            app:layout_constraintTop_toTopOf="@id/detail_iv_company"
+            tools:text="Company" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/detail_barrier2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="detail_iv_company, detail_tv_company" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
